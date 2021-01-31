@@ -11,6 +11,28 @@ define config.voice_filename_format = "{filename}"
 image black = "#000"
 image white = "#ffffff"
 
+transform why_alt_xiaojiu(x=640,y=0):
+    xcenter x - 95 ycenter y + 150 zoom 0.70 alpha 0.00 subpixel True
+    easein 0.3 xcenter x - 115 ycenter y + 110 alpha 1.00
+    easein 0.4 xcenter x - 95 ycenter y + 150
+    easein 0.5
+    easein 1.0 xcenter x - 75 ycenter y + 190 alpha 0.00
+transform sub_xiaoli(x = 640,y= 0):
+    xcenter x ycenter y + 75 zoom 0.8 alpha 0.00 subpixel True
+    parallel:
+        linear 0.5 ycenter y + 150
+    parallel:
+        linear 0.2 alpha 1.0
+        linear 1.0
+        linear 0.3 alpha 0.0
+
+image why1:
+    "liluo_common/common/facial/why.png"
+    why_alt_xiaojiu(x = 740, y = 108)
+image sub2:
+    "liluo_common/common/facial/sub.png"
+    sub_xiaoli(x = 950 , y=100)
+
 image side xiaoli_banter="side/side_xiaoli_banter.png"
 image side xiaoli_forcedsmile="side/side_xiaoli_forcedsmile.png"
 image side xiaoli_happy="side/side_xiaoli_happy.png"
@@ -201,11 +223,13 @@ label second:
         xcenter 0.4 
         ypos 0.1
         linear 0.1 re_left
+    show why1
     voice db5
     xj xiaojiu_smile "「怎么样的一点点？」"
     hide xiaoli_xd_smile
-    show xiaoli_sleep_closeeye_onehand at re_center
+    hide xiaoli_sleep_closeeye_onehand
     show xiaojiu_smile at re_left
+    show xiaoli_sleep_closeeye_onehand at re_center
     voice da7
     lxl xiaoli_sleep_closeeye "「小学生回到家里，爸爸问他考得怎么样，他说：“就考差了一点点。”」"
     hide xiaojiu_smile
@@ -253,6 +277,7 @@ label second:
     narrator_adv "越来越近，随后又越来越远。"
     hide xiaoli_sleep_closeeye
     show xiaoli_left at re_center
+    show sub2
     voice da11
     lxl xiaoli_left "「发生什么了吗？」"
     hide xiaojiu_hum_onehand
