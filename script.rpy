@@ -61,6 +61,21 @@ image side xiaojiu_pleased="side/side_xiaojiu_pleased.png"
 image side xiaojiu_smile="side/side_xiaojiu_smile.png"
 image side xiaojiu_worry="side/side_xiaojiu_worry.png"
 
+image side suchun_angry="side/side_suchun_angry.png"
+image side suchun_frown="side/side_suchun_frown.png"
+image side suchun_gaze="side/side_suchun_gaze.png"
+image side suchun_happy="side/side_suchun_happy.png"
+image side suchun_laugh="side/side_suchun_laugh.png"
+image side suchun_left="side/side_suchun_left.png"
+image side suchun_pleased="side/side_suchun_pleased.png"
+image side suchun_rebuke="side/side_suchun_rebuke.png"
+image side suchun_resolute="side/side_suchun_resolute.png"
+image side suchun_slack="side/side_suchun_slack.png"
+image side suchun_sleep="side/side_suchun_sleep.png"
+image side suchun_smile="side/side_suchun_smile.png"
+image side suchun_smile_closeeye="side/side_suchun_smile_closeeye.png"
+image side suchun_worry="side/side_suchun_worry.png"
+
 transform re_left:
     xcenter 0.3
     ypos 0.1
