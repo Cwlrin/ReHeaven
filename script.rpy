@@ -299,7 +299,38 @@ label second:
     show xiaojiu_pleased_onehand at re_left
     voice db8
     xj xiaojiu_pleased "「不知道。」"
-    return
+    hide xiaojiu_pleased_onehand
+    hide xiaoli_left
+    scene black with ImageDissolve("images/transition/right.png", 2, 32)
+    scene laboratory with ImageDissolve("images/transition/right.png", 2, 32)
+
+label third:
+    manA "「这怎么能行！！」"
+    manA "「你接受了那么多知识，你不明白吗？自由仅仅在不伤害他人自由的前提之上！{w}要是这种伤害了他人的案件都可以宣布无罪，那社会不就乱了套了吗？」"
+    manA "「而且这种损害了他人自由权的条例，用屁股想都知道肯定会伤害更多人的权利啊！」"
+    narrator_adv "我一走进研究所，就听见有人在剧烈地敲着桌子。"
+    womanA "「呵呵。人类再不出台一些补救措施，自己就要走向衰亡了。你知道吗？{w}最近我们这个城市里发生的的刑事案件中，有64.3%%的受害者强烈要求宣判嫌疑人无罪。这条法律是一定会出台的！」"
+    manB "「操，这怎么可能！他们都疯了吗？谁他妈的会原谅差点把自己杀了的人啊？不行，我要去谴责他们！」"
+    womanA "「你不会没注意到这个办法不适用于有死者出现的情况吧！只要没有伤亡，经济损失不大，让嫌疑人无罪释放有什么不好？还可以减轻监狱人工智能的分析负担……」"
+    manA "「这也不行！这是关系到人最基本最重要的权利，无论如何这是不可能妥协的，而且怎么会真的有办法出台……」"
+    narrator_adv "我犹豫了一下，敲了敲门。"
+    voice dc1
+    sc "「那个，打扰一下，你好？」"
+    womanA "「哼，懒得和你这种目光短浅的男人解释。」"
+    manA "「你不是也只会感情用事吗？」"
+    narrator_adv "在门口呆了好久都不知道要不要打扰他们……上次来这里的时候他们不是还一起吃饭来着？"
+    voice dc2
+    sc "「你好？」"
+    womanA "「有人来了，别吵了，到时候再看吧。」"
+    manA "「哼……唉？苏纯大大！你又来啦？是要送信吗？」"
+    voice dc3
+    sc "「嗯……麻烦你们了。」"
+    manA "「今天能不能给我这一件衣服也签个名？拜托了！」"
+    narrator_adv "男性研究员这次露出了印在衬衫上的另一个大头美少女。"
+    womanA "「你这算以权谋私吧……」"
+    voice dc4
+    sc "「没事没事，能遇见喜欢我的画的人我也很开心。」"
+    womanA "「好啦好啦，手续还是要办的，信给我吧。」"
 
 label start:
 
