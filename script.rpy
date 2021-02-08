@@ -1,6 +1,6 @@
 ﻿define lxl = Character(' 林小鲤 ',image="xiaoli")
 define xj = Character(' 筱久 ',image="xiaojiu",who_color="#2894FF")
-define sc = Character(' 苏纯 ',image="sucun")
+define sc = Character(' 苏纯 ',image="sucun",who_color="716D95")
 define manA = Character(' 男研究员A ')
 define womanA = Character(' 女研究员A ')
 define manB = Character(' 男研究员B ')
@@ -25,6 +25,11 @@ transform sub_xiaoli(x = 640,y= 0):
         linear 0.2 alpha 1.0
         linear 1.0
         linear 0.3 alpha 0.0
+transform leap(y = 44):
+    subpixel True
+    easein .14 yoffset -y alpha 1.00
+    easeout .14 yoffset 0 alpha 1.00
+
 
 image why1:
     "liluo_common/common/facial/why.png"
@@ -32,6 +37,9 @@ image why1:
 image sub2:
     "liluo_common/common/facial/sub.png"
     sub_xiaoli(x = 950 , y=100)
+
+image Awoman = "Awoman.png"
+image Aman = "Aman.png"
 
 image side xiaoli_banter="side/side_xiaoli_banter.png"
 image side xiaoli_forcedsmile="side/side_xiaoli_forcedsmile.png"
@@ -68,6 +76,7 @@ image side suchun_happy="side/side_suchun_happy.png"
 image side suchun_laugh="side/side_suchun_laugh.png"
 image side suchun_left="side/side_suchun_left.png"
 image side suchun_pleased="side/side_suchun_pleased.png"
+image side suchun_pockerfaced="side/side_suchun_pockerfaced.png"
 image side suchun_rebuke="side/side_suchun_rebuke.png"
 image side suchun_resolute="side/side_suchun_resolute.png"
 image side suchun_slack="side/side_suchun_slack.png"
@@ -87,7 +96,7 @@ transform re_center:
     ypos 0.1
 
 label first:
-    #play music "audio/colorful dream.mp3"
+    play music "audio/海中都市.wav" fadeout 1.0 fadein 1.0
     scene black
     narrator_adv "又做了那个梦。"
     scene black with Fade(0.1, 0.0, 0.5, color="#fff")
@@ -162,6 +171,7 @@ label first:
     scene black_white_dream_light with ImageDissolve("transition/noise.png",0.2)
     narrator_adv "无数的线条交织在天空上，混乱无序。"
     narrator_adv "我讨厌这种感觉。"
+    stop music
 
 label second:
     voice da4
@@ -184,7 +194,7 @@ label second:
         linear 0.2 xcenter 0.7 ypos 0.1
     voice da5
     lxl xiaoli_forcedsmile "「我没事。又做了……那个梦。」"
-    #play music "audio/A_Lazy_Day.mp3"
+    play music "audio/まったり日和.wav" fadeout 1.0 fadein 1.0
     hide xiaojiu_amaze_onehand
     show xiaojiu_worry at re_left
     show xiaoli_stare at re_right
@@ -301,37 +311,63 @@ label second:
     xj xiaojiu_pleased "「不知道。」"
     hide xiaojiu_pleased_onehand
     hide xiaoli_left
-    scene black with ImageDissolve("images/transition/right.png", 2, 32)
-    scene laboratory with ImageDissolve("images/transition/right.png", 2, 32)
+    stop music
+    scene black with ImageDissolve("images/transition/right.png", 0.5, 32)
+    scene testcg with ImageDissolve("images/transition/right.png", 0.5, 32)
+    play sound "audio/voice/reheaven.wav"
+    pause 3
+    scene black with ImageDissolve("images/transition/right.png", 0.5, 32)
+    scene laboratory with ImageDissolve("images/transition/right.png", 0.5, 32)
 
 label third:
     manA "「这怎么能行！！」"
     manA "「你接受了那么多知识，你不明白吗？自由仅仅在不伤害他人自由的前提之上！{w}要是这种伤害了他人的案件都可以宣布无罪，那社会不就乱了套了吗？」"
     manA "「而且这种损害了他人自由权的条例，用屁股想都知道肯定会伤害更多人的权利啊！」"
-    narrator_adv "我一走进研究所，就听见有人在剧烈地敲着桌子。"
+    play music "audio/水曜日午後の秘密のお茶会.wav" fadeout 1.0 fadein 1.0
+    narrator_adv  "我一走进研究所，就听见有人在剧烈地敲着桌子。"
     womanA "「呵呵。人类再不出台一些补救措施，自己就要走向衰亡了。你知道吗？{w}最近我们这个城市里发生的的刑事案件中，有64.3%%的受害者强烈要求宣判嫌疑人无罪。这条法律是一定会出台的！」"
     manB "「操，这怎么可能！他们都疯了吗？谁他妈的会原谅差点把自己杀了的人啊？不行，我要去谴责他们！」"
     womanA "「你不会没注意到这个办法不适用于有死者出现的情况吧！只要没有伤亡，经济损失不大，让嫌疑人无罪释放有什么不好？还可以减轻监狱人工智能的分析负担……」"
     manA "「这也不行！这是关系到人最基本最重要的权利，无论如何这是不可能妥协的，而且怎么会真的有办法出台……」"
-    narrator_adv "我犹豫了一下，敲了敲门。"
+    narrator_adv  "我犹豫了一下，敲了敲门。"
     voice dc1
-    sc "「那个，打扰一下，你好？」"
+    show suchun_pleased_raisehand
+    sc suchun_pleased "「那个，打扰一下，你好？」"
+    hide suchun_pleased_raisehand
+    show Aman :
+        xcenter 0.8 ypos 0.1
+    show Awoman :
+        xcenter 0.2 ypos 0.1
+        leap(30)
     womanA "「哼，懒得和你这种目光短浅的男人解释。」"
     manA "「你不是也只会感情用事吗？」"
-    narrator_adv "在门口呆了好久都不知道要不要打扰他们……上次来这里的时候他们不是还一起吃饭来着？"
+    narrator_adv  "在门口呆了好久都不知道要不要打扰他们……上次来这里的时候他们不是还一起吃饭来着？"
+    hide Awoman
+    hide Aman
+    show suchun_happy
     voice dc2
-    sc "「你好？」"
+    sc suchun_happy "「你好？」"
+    show Awoman :
+        xcenter 0.2 ypos 0.1
     womanA "「有人来了，别吵了，到时候再看吧。」"
+    show Aman :
+        xcenter 0.8 ypos 0.1
     manA "「哼……唉？苏纯大大！你又来啦？是要送信吗？」"
     voice dc3
-    sc "「嗯……麻烦你们了。」"
+    hide suchun_happy
+    show suchun_smile
+    sc suchun_smile "「嗯……麻烦你们了。」"
     manA "「今天能不能给我这一件衣服也签个名？拜托了！」"
     narrator_adv "男性研究员这次露出了印在衬衫上的另一个大头美少女。"
     womanA "「你这算以权谋私吧……」"
     voice dc4
-    sc "「没事没事，能遇见喜欢我的画的人我也很开心。」"
+    hide suchun_smile
+    show suchun_smile_closeeye
+    sc suchun_smile_closeeye"「没事没事，能遇见喜欢我的画的人我也很开心。」"
     womanA "「好啦好啦，手续还是要办的，信给我吧。」"
+    return
 
 label start:
 
     jump first
+
