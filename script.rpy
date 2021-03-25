@@ -96,7 +96,7 @@ transform re_center:
     ypos 0.1
 
 label first:
-    play music "audio/海中都市.wav" fadeout 1.0 fadein 1.0
+    play music "audio/bgm1_maoudamashii_piano40_安らぎの思い.mp3" fadeout 1.0 fadein 1.0
     scene black
     narrator_adv "又做了那个梦。"
     scene black with Fade(0.1, 0.0, 0.5, color="#fff")
@@ -194,7 +194,7 @@ label second:
         linear 0.2 xcenter 0.7 ypos 0.1
     voice da5
     lxl xiaoli_forcedsmile "「我没事。又做了……那个梦。」"
-    play music "audio/まったり日和.wav" fadeout 1.0 fadein 1.0
+    play music "audio/bgm2_mifunostudio_Workdays.mp3" fadeout 1.0 fadein 1.0
     hide xiaojiu_amaze_onehand
     show xiaojiu_worry at re_left
     show xiaoli_stare at re_right
@@ -323,7 +323,7 @@ label third:
     manA "「这怎么能行！！」"
     manA "「你接受了那么多知识，你不明白吗？自由仅仅在不伤害他人自由的前提之上！{w}要是这种伤害了他人的案件都可以宣布无罪，那社会不就乱了套了吗？」"
     manA "「而且这种损害了他人自由权的条例，用屁股想都知道肯定会伤害更多人的权利啊！」"
-    play music "audio/水曜日午後の秘密のお茶会.wav" fadeout 1.0 fadein 1.0
+    play music "audio/bgm3_MusMus_夕餉の街並み.mp3" fadeout 1.0 fadein 1.0
     narrator_adv  "我一走进研究所，就听见有人在剧烈地敲着桌子。"
     womanA "「呵呵。人类再不出台一些补救措施，自己就要走向衰亡了。你知道吗？{w}最近我们这个城市里发生的的刑事案件中，有64.3%%的受害者强烈要求宣判嫌疑人无罪。这条法律是一定会出台的！」"
     manB "「操，这怎么可能！他们都疯了吗？谁他妈的会原谅差点把自己杀了的人啊？不行，我要去谴责他们！」"
